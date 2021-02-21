@@ -1,4 +1,4 @@
-baseurl: https://169163.xyz
+baseurl: https://blog.169163.xyz
 languageCode: zh-cn
 theme: hugo-theme-stack
 paginate: 5
@@ -23,7 +23,7 @@ params:
         - post
     featuredImageField: image
     rssFullContent: true
-    favicon: img/favicon.ico
+    favicon: img/favicon.png
 
     footer:
         since: 2020
@@ -35,7 +35,7 @@ params:
 
     sidebar:
         emoji: 🇨🇳
-        subtitle: 169163
+        subtitle: 又名山下さくら
         avatar: 
             local: true
             src: img/avatar.png
