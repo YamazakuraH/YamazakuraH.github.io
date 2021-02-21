@@ -3,54 +3,59 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://169163.xyz/</loc>
+    <loc>https://blog.169163.xyz/</loc>
     <lastmod>2021-02-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://169163.xyz/p/hello/</loc>
+    <loc>https://blog.169163.xyz/p/hello/</loc>
     <lastmod>2021-02-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://169163.xyz/post/</loc>
+    <loc>https://blog.169163.xyz/p/hello/</loc>
     <lastmod>2021-02-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://169163.xyz/p/%E6%B2%A1%E6%9C%89%E8%89%B2%E5%9B%BE%E7%9A%84%E4%B8%96%E7%95%8C/</loc>
+    <loc>https://blog.169163.xyz/post/</loc>
     <lastmod>2021-02-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://169163.xyz/archives/</loc>
+    <loc>https://blog.169163.xyz/p/%E6%B2%A1%E6%9C%89%E8%89%B2%E5%9B%BE%E7%9A%84%E4%B8%96%E7%95%8C/</loc>
+    <lastmod>2021-02-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.169163.xyz/archives/</loc>
     <lastmod>2019-05-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://169163.xyz/page/</loc>
+    <loc>https://blog.169163.xyz/page/</loc>
     <lastmod>2019-05-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://169163.xyz/about/</loc>
+    <loc>https://blog.169163.xyz/about/</loc>
     <lastmod>1202-02-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://169163.xyz/categories/</loc>
+    <loc>https://blog.169163.xyz/categories/</loc>
   </url>
   
   <url>
-    <loc>https://169163.xyz/categories/flyio/</loc>
+    <loc>https://blog.169163.xyz/categories/flyio/</loc>
   </url>
   
   <url>
-    <loc>https://169163.xyz/search/</loc>
+    <loc>https://blog.169163.xyz/search/</loc>
   </url>
   
   <url>
-    <loc>https://169163.xyz/tags/</loc>
+    <loc>https://blog.169163.xyz/tags/</loc>
   </url>
   
 </urlset>
