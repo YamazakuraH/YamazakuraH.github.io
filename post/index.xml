@@ -13,7 +13,12 @@
       <pubDate>Mon, 22 Feb 2021 12:45:34 +0900</pubDate>
       
       <guid>https://blog.169163.xyz/p/create-onemanager/</guid>
-      <description>等会在写 </description>
+      <description>OS：Debian10 咱打算直接照抄186的Onemanager-Flyio 啥也不说了，直接进入主题。
+sudo apt-get update 安装需要的程序
+sudo apt-get install --no-install-recommends ca-certificates gnupg2 gettext-base lsb-base lsb-release software-properties-common wget -y 安装openresty
+wget -O - https://openresty.org/package/pubkey.gpg | sudo apt-key add - sudo add-apt-repository -y &amp;quot;deb http://openresty.org/package/debian $(lsb_release -sc) openresty&amp;quot; sudo apt-get update sudo apt-get install --no-install-recommends openresty -y 安装Php
+sudo apt-get install --no-install-recommends php-bcmath php-curl php-cli php-fpm php-gd php-json php-mbstring php-mysql php-pdo php-pear php-xml php-zip -y mkdir /run/php/ 下载Onemanager
+wget https://git.qvqaq.ml/186526/OneManager-php/archive/master.tar.gz -P /www/ cd /www/ &amp;amp;&amp;amp; tar xvf master.</description>
     </item>
     
     <item>

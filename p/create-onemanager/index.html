@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='最小化安装'><title>如何搭建一个Onemanager</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='使用OpenResty'><title>如何搭建一个Onemanager</title>
 
 <link rel='canonical' href='https://blog.169163.xyz/p/create-onemanager/'>
 
 <link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='如何搭建一个Onemanager'>
-<meta property='og:description' content='最小化安装'>
+<meta property='og:description' content='使用OpenResty'>
 <meta property='og:url' content='https://blog.169163.xyz/p/create-onemanager/'>
 <meta property='og:site_name' content='169163&#39;s blog'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2021-02-22T12:45:34&#43;09:00'/><meta property='article:modified_time' content='2021-02-22T12:45:34&#43;09:00'/><meta property='og:image' content='https://blog.169163.xyz/p/create-onemanager/cover.jpg' />
 <meta name="twitter:title" content="如何搭建一个Onemanager">
-<meta name="twitter:description" content="最小化安装"><meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="使用OpenResty"><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='https://blog.169163.xyz/p/create-onemanager/cover.jpg' />
     <link rel="shortcut icon" href="img/favicon.png" />
 
@@ -208,7 +208,7 @@
 
     
     <h3 class="article-subtitle">
-        最小化安装
+        使用OpenResty
     </h3>
     <footer class="article-time">
         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -224,7 +224,25 @@
 </header>
 
     <section class="article-content">
-    <h1 id="等会在写">等会在写</h1>
+    <h3 id="osdebian10">OS：Debian10</h3>
+<h4 id="咱打算直接照抄186的onemanager-flyio">咱打算直接照抄186的Onemanager-Flyio</h4>
+<p><strong>啥也不说了，直接进入主题。</strong></p>
+<pre><code class="language-console" data-lang="console">sudo apt-get update
+</code></pre><p><strong>安装需要的程序</strong></p>
+<pre><code class="language-console" data-lang="console">sudo apt-get install --no-install-recommends ca-certificates gnupg2 gettext-base lsb-base lsb-release software-properties-common wget -y
+</code></pre><p><strong>安装openresty</strong></p>
+<pre><code class="language-console" data-lang="console">wget -O - https://openresty.org/package/pubkey.gpg | sudo apt-key add -
+</code></pre><pre><code class="language-console" data-lang="console">sudo add-apt-repository -y &quot;deb http://openresty.org/package/debian $(lsb_release -sc) openresty&quot; 
+</code></pre><pre><code class="language-console" data-lang="console">sudo apt-get update
+</code></pre><pre><code class="language-console" data-lang="console">sudo apt-get install --no-install-recommends openresty -y
+</code></pre><p><strong>安装Php</strong></p>
+<pre><code class="language-console" data-lang="console">sudo apt-get install --no-install-recommends php-bcmath php-curl php-cli php-fpm  php-gd php-json php-mbstring php-mysql php-pdo php-pear php-xml php-zip -y
+</code></pre><pre><code class="language-console" data-lang="console">mkdir /run/php/
+</code></pre><p><strong>下载Onemanager</strong></p>
+<pre><code class="language-console" data-lang="console">wget https://git.qvqaq.ml/186526/OneManager-php/archive/master.tar.gz -P /www/
+</code></pre><pre><code class="language-console" data-lang="console">cd /www/ &amp;&amp; tar xvf master.tar.gz &amp;&amp; rm -rf master.tar.gz &amp;&amp; chmod -R 777 onemanager-php
+</code></pre><p><strong>配置openresty</strong></p>
+<h2 id="未完待续">未完待续&hellip;&hellip;</h2>
 
 </section>
 

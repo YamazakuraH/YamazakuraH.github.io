@@ -12,7 +12,25 @@
         <pubDate>Mon, 22 Feb 2021 12:45:34 +0900</pubDate>
         
         <guid>https://blog.169163.xyz/p/create-onemanager/</guid>
-        <description>&lt;img src="https://blog.169163.xyz/p/create-onemanager/cover.jpg" alt="Featured image of post 如何搭建一个Onemanager" /&gt;&lt;h1 id=&#34;等会在写&#34;&gt;等会在写&lt;/h1&gt;
+        <description>&lt;img src="https://blog.169163.xyz/p/create-onemanager/cover.jpg" alt="Featured image of post 如何搭建一个Onemanager" /&gt;&lt;h3 id=&#34;osdebian10&#34;&gt;OS：Debian10&lt;/h3&gt;
+&lt;h4 id=&#34;咱打算直接照抄186的onemanager-flyio&#34;&gt;咱打算直接照抄186的Onemanager-Flyio&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;啥也不说了，直接进入主题。&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-console&#34; data-lang=&#34;console&#34;&gt;sudo apt-get update
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;安装需要的程序&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-console&#34; data-lang=&#34;console&#34;&gt;sudo apt-get install --no-install-recommends ca-certificates gnupg2 gettext-base lsb-base lsb-release software-properties-common wget -y
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;安装openresty&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-console&#34; data-lang=&#34;console&#34;&gt;wget -O - https://openresty.org/package/pubkey.gpg | sudo apt-key add -
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code class=&#34;language-console&#34; data-lang=&#34;console&#34;&gt;sudo add-apt-repository -y &amp;quot;deb http://openresty.org/package/debian $(lsb_release -sc) openresty&amp;quot; 
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code class=&#34;language-console&#34; data-lang=&#34;console&#34;&gt;sudo apt-get update
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code class=&#34;language-console&#34; data-lang=&#34;console&#34;&gt;sudo apt-get install --no-install-recommends openresty -y
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;安装Php&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-console&#34; data-lang=&#34;console&#34;&gt;sudo apt-get install --no-install-recommends php-bcmath php-curl php-cli php-fpm  php-gd php-json php-mbstring php-mysql php-pdo php-pear php-xml php-zip -y
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code class=&#34;language-console&#34; data-lang=&#34;console&#34;&gt;mkdir /run/php/
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;下载Onemanager&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-console&#34; data-lang=&#34;console&#34;&gt;wget https://git.qvqaq.ml/186526/OneManager-php/archive/master.tar.gz -P /www/
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code class=&#34;language-console&#34; data-lang=&#34;console&#34;&gt;cd /www/ &amp;amp;&amp;amp; tar xvf master.tar.gz &amp;amp;&amp;amp; rm -rf master.tar.gz &amp;amp;&amp;amp; chmod -R 777 onemanager-php
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;配置openresty&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;未完待续&#34;&gt;未完待续&amp;hellip;&amp;hellip;&lt;/h2&gt;
 </description>
         </item>
         <item>
