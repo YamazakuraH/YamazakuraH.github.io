@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='使用OpenResty'><title>如何搭建一个Onemanager</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='如何折腾Euserv'><title>在Euserv上部署GoneList并使用Argo tunnel</title>
 
-<link rel='canonical' href='https://blog.169163.xyz/p/create-onemanager/'>
+<link rel='canonical' href='https://blog.169163.xyz/p/gonelist-only-ipv6-argo/'>
 
-<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='如何搭建一个Onemanager'>
-<meta property='og:description' content='使用OpenResty'>
-<meta property='og:url' content='https://blog.169163.xyz/p/create-onemanager/'>
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='在Euserv上部署GoneList并使用Argo tunnel'>
+<meta property='og:description' content='如何折腾Euserv'>
+<meta property='og:url' content='https://blog.169163.xyz/p/gonelist-only-ipv6-argo/'>
 <meta property='og:site_name' content='169163&#39;s blog'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2021-02-22T12:45:34&#43;09:00'/><meta property='article:modified_time' content='2021-02-22T12:45:34&#43;09:00'/><meta property='og:image' content='https://blog.169163.xyz/p/create-onemanager/cover.jpg' />
-<meta name="twitter:title" content="如何搭建一个Onemanager">
-<meta name="twitter:description" content="使用OpenResty"><meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content='https://blog.169163.xyz/p/create-onemanager/cover.jpg' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2021-02-22T14:14:41&#43;09:00'/><meta property='article:modified_time' content='2021-02-22T14:14:41&#43;09:00'/><meta property='og:image' content='https://blog.169163.xyz/cover.jpg' />
+<meta name="twitter:title" content="在Euserv上部署GoneList并使用Argo tunnel">
+<meta name="twitter:description" content="如何折腾Euserv"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://blog.169163.xyz/cover.jpg' />
     <link rel="shortcut icon" href="img/favicon.png" />
 
     </head>
@@ -187,13 +187,9 @@
     <article class="has-image main-article">
     <header class="article-header">
         <div class="article-image">
-            <a href="/p/create-onemanager/">
-                <img src="/p/create-onemanager/cover_hua82d034175dab4375ca0a522441363dc_286267_800x0_resize_q75_box.jpg"
-                        srcset="/p/create-onemanager/cover_hua82d034175dab4375ca0a522441363dc_286267_800x0_resize_q75_box.jpg 800w, /p/create-onemanager/cover_hua82d034175dab4375ca0a522441363dc_286267_1600x0_resize_q75_box.jpg 1600w"
-                        width="800" 
-                        height="346" 
-                        loading="lazy"
-                        alt="Featured image of post 如何搭建一个Onemanager" />
+            <a href="/p/gonelist-only-ipv6-argo/">
+                
+                    <img src="cover.jpg" loading="lazy" alt="Featured image of post 在Euserv上部署GoneList并使用Argo tunnel" />
                 
             </a>
         </div>
@@ -203,12 +199,12 @@
     
 
     <h2 class="article-title">
-        <a href="/p/create-onemanager/">如何搭建一个Onemanager</a>
+        <a href="/p/gonelist-only-ipv6-argo/">在Euserv上部署GoneList并使用Argo tunnel</a>
     </h2>
 
     
     <h3 class="article-subtitle">
-        使用OpenResty
+        如何折腾Euserv
     </h3>
     <footer class="article-time">
         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -224,30 +220,8 @@
 </header>
 
     <section class="article-content">
-    <h3 id="osdebian10">OS：Debian10</h3>
-<h4 id="咱打算直接照抄186的onemanager-flyio">咱打算直接照抄186的Onemanager-Flyio</h4>
-<p><strong>啥也不说了，直接进入主题。</strong></p>
-<pre><code class="language-console" data-lang="console">sudo apt-get update
-</code></pre><p><strong>安装需要的程序</strong></p>
-<pre><code class="language-console" data-lang="console">sudo apt-get install --no-install-recommends ca-certificates gnupg2 gettext-base lsb-base lsb-release software-properties-common wget -y
-</code></pre><p><strong>安装openresty</strong></p>
-<pre><code class="language-console" data-lang="console">wget -O - https://openresty.org/package/pubkey.gpg | sudo apt-key add -
-</code></pre><pre><code class="language-console" data-lang="console">sudo add-apt-repository -y &quot;deb http://openresty.org/package/debian $(lsb_release -sc) openresty&quot; 
-</code></pre><pre><code class="language-console" data-lang="console">sudo apt-get update
-</code></pre><pre><code class="language-console" data-lang="console">sudo apt-get install --no-install-recommends openresty -y
-</code></pre><p><strong>安装Php</strong></p>
-<pre><code class="language-console" data-lang="console">sudo apt-get install --no-install-recommends php-bcmath php-curl php-cli php-fpm  php-gd php-json php-mbstring php-mysql php-pdo php-pear php-xml php-zip -y
-</code></pre><pre><code class="language-console" data-lang="console">mkdir /run/php/
-</code></pre><p><strong>下载Onemanager</strong></p>
-<pre><code class="language-console" data-lang="console">wget https://git.qvqaq.ml/186526/OneManager-php/archive/master.tar.gz -P /www/
-</code></pre><pre><code class="language-console" data-lang="console">cd /www/ &amp;&amp; tar xvf master.tar.gz &amp;&amp; rm -rf master.tar.gz &amp;&amp; chmod -R 777 onemanager-php
-</code></pre><p><strong>配置openresty</strong></p>
-<pre><code>将 /usr/local/openresty/nginx/conf/nginx.conf 中的server段注释掉  
-gzip on; 取消注释  
-在 gzip on; 下面添加`include /etc/nginx/conf.d/*.conf;`
-在 /etc/nginx/conf.d/ 下创建网站conf  
-如果出现502错误尝试在 /usr/local/openresty/nginx/conf/nginx.conf 中修改 user （方法不止一种，这只是最简单的一个。）
-</code></pre>
+    <p>#占坑（因为Argo Tunnel坏了</p>
+
 </section>
 
 

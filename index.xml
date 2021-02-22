@@ -6,7 +6,16 @@
         <description>Recent content on 169163&#39;s blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Mon, 22 Feb 2021 12:45:34 +0900</lastBuildDate><atom:link href="https://blog.169163.xyz/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 22 Feb 2021 14:14:41 +0900</lastBuildDate><atom:link href="https://blog.169163.xyz/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>在Euserv上部署GoneList并使用Argo tunnel</title>
+        <link>https://blog.169163.xyz/p/gonelist-only-ipv6-argo/</link>
+        <pubDate>Mon, 22 Feb 2021 14:14:41 +0900</pubDate>
+        
+        <guid>https://blog.169163.xyz/p/gonelist-only-ipv6-argo/</guid>
+        <description>&lt;img src="https://blog.169163.xyz/cover.jpg" alt="Featured image of post 在Euserv上部署GoneList并使用Argo tunnel" /&gt;&lt;p&gt;#占坑（因为Argo Tunnel坏了&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>如何搭建一个Onemanager</title>
         <link>https://blog.169163.xyz/p/create-onemanager/</link>
         <pubDate>Mon, 22 Feb 2021 12:45:34 +0900</pubDate>
@@ -30,8 +39,12 @@
 &lt;pre&gt;&lt;code class=&#34;language-console&#34; data-lang=&#34;console&#34;&gt;wget https://git.qvqaq.ml/186526/OneManager-php/archive/master.tar.gz -P /www/
 &lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code class=&#34;language-console&#34; data-lang=&#34;console&#34;&gt;cd /www/ &amp;amp;&amp;amp; tar xvf master.tar.gz &amp;amp;&amp;amp; rm -rf master.tar.gz &amp;amp;&amp;amp; chmod -R 777 onemanager-php
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;配置openresty&lt;/strong&gt;&lt;/p&gt;
-&lt;h2 id=&#34;未完待续&#34;&gt;未完待续&amp;hellip;&amp;hellip;&lt;/h2&gt;
-</description>
+&lt;pre&gt;&lt;code&gt;将 /usr/local/openresty/nginx/conf/nginx.conf 中的server段注释掉  
+gzip on; 取消注释  
+在 gzip on; 下面添加`include /etc/nginx/conf.d/*.conf;`
+在 /etc/nginx/conf.d/ 下创建网站conf  
+如果出现502错误尝试在 /usr/local/openresty/nginx/conf/nginx.conf 中修改 user （方法不止一种，这只是最简单的一个。）
+&lt;/code&gt;&lt;/pre&gt;</description>
         </item>
         <item>
         <title>没有色图的世界</title>
