@@ -6,34 +6,34 @@
     <description>Recent content in Posts on 169163&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 21 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.169163.xyz/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 22 Feb 2021 12:45:34 +0900</lastBuildDate><atom:link href="https://blog.169163.xyz/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Hello</title>
-      <link>https://blog.169163.xyz/p/hello/</link>
-      <pubDate>Sun, 21 Feb 2021 00:00:00 +0000</pubDate>
+      <title>如何搭建一个Onemanager</title>
+      <link>https://blog.169163.xyz/p/create-onemanager/</link>
+      <pubDate>Mon, 22 Feb 2021 12:45:34 +0900</pubDate>
       
-      <guid>https://blog.169163.xyz/p/hello/</guid>
-      <description>图 
- 图</description>
+      <guid>https://blog.169163.xyz/p/create-onemanager/</guid>
+      <description>等会在写 </description>
     </item>
     
     <item>
       <title>没有色图的世界</title>
-      <link>https://blog.169163.xyz/p/%E6%B2%A1%E6%9C%89%E8%89%B2%E5%9B%BE%E7%9A%84%E4%B8%96%E7%95%8C/</link>
-      <pubDate>Sun, 21 Feb 2021 00:00:00 +0000</pubDate>
+      <link>https://blog.169163.xyz/p/no-porn/</link>
+      <pubDate>Sun, 21 Feb 2021 11:30:55 +0900</pubDate>
       
-      <guid>https://blog.169163.xyz/p/%E6%B2%A1%E6%9C%89%E8%89%B2%E5%9B%BE%E7%9A%84%E4%B8%96%E7%95%8C/</guid>
+      <guid>https://blog.169163.xyz/p/no-porn/</guid>
       <description>胡桃 
  新仓绫音</description>
     </item>
     
     <item>
-      <title>自建云盘</title>
-      <link>https://blog.169163.xyz/p/%E8%87%AA%E5%BB%BA%E4%BA%91%E7%9B%98/</link>
-      <pubDate>Sun, 21 Feb 2021 00:00:00 +0000</pubDate>
+      <title>Hello World</title>
+      <link>https://blog.169163.xyz/p/hello-world/</link>
+      <pubDate>Sun, 21 Feb 2021 10:12:41 +0900</pubDate>
       
-      <guid>https://blog.169163.xyz/p/%E8%87%AA%E5%BB%BA%E4%BA%91%E7%9B%98/</guid>
-      <description>等会在写 </description>
+      <guid>https://blog.169163.xyz/p/hello-world/</guid>
+      <description>Hello World！  图 
+ 图</description>
     </item>
     
   </channel>
