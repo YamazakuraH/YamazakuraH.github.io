@@ -45,5 +45,11 @@ wget https://git.qvqaq.ml/186526/OneManager-php/archive/master.tar.gz -P /www/
 ```console
 cd /www/ && tar xvf master.tar.gz && rm -rf master.tar.gz && chmod -R 777 onemanager-php
 ```
-**配置openresty**
-## 未完待续......
+**配置openresty**  
+```
+将 /usr/local/openresty/nginx/conf/nginx.conf 中的server段注释掉  
+gzip on; 取消注释  
+在 gzip on; 下面添加`include /etc/nginx/conf.d/*.conf;`
+在 /etc/nginx/conf.d/ 下创建网站conf  
+如果出现502错误尝试在 /usr/local/openresty/nginx/conf/nginx.conf 中修改 user （方法不止一种，这只是最简单的一个。）
+```
