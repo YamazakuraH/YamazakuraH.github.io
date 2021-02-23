@@ -4,6 +4,7 @@ description: 如何折腾Euserv
 date: 2021-02-22T14:14:41+09:00
 image: cover.jpg
 slug: gonelist-only-ipv6-argo
+categories: 技术
 ---
 ###### 186指导
 如何安装Argo Tunnel可以参考 **[这里](https://blog.186526.xyz/post/argo-tunnel-for-free/)**。  

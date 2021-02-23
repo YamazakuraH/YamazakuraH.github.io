@@ -4,6 +4,7 @@ description: 使用OpenResty
 date: 2021-02-22T12:45:34+09:00
 image: cover.jpg
 slug: create-onemanager
+categories: 技术
 ---
 
 ### OS：Debian10
