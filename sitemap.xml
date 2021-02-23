@@ -8,12 +8,22 @@
   </url>
   
   <url>
+    <loc>https://blog.169163.xyz/categories/</loc>
+    <lastmod>2021-02-22T14:14:41+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.169163.xyz/post/</loc>
     <lastmod>2021-02-22T14:14:41+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.169163.xyz/p/gonelist-only-ipv6-argo/</loc>
+    <lastmod>2021-02-22T14:14:41+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.169163.xyz/categories/%E6%8A%80%E6%9C%AF/</loc>
     <lastmod>2021-02-22T14:14:41+09:00</lastmod>
   </url>
   
@@ -48,10 +58,6 @@
   </url>
   
   <url>
-    <loc>https://blog.169163.xyz/categories/</loc>
-  </url>
-  
-  <url>
     <loc>https://blog.169163.xyz/categories/flyio/</loc>
   </url>
   
@@ -61,10 +67,6 @@
   
   <url>
     <loc>https://blog.169163.xyz/tags/</loc>
-  </url>
-  
-  <url>
-    <loc>https://blog.169163.xyz/categories/%E6%8A%80%E6%9C%AF/</loc>
   </url>
   
 </urlset>
