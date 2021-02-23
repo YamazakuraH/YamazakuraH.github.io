@@ -13,7 +13,28 @@
       <pubDate>Mon, 22 Feb 2021 14:14:41 +0900</pubDate>
       
       <guid>https://blog.169163.xyz/p/gonelist-only-ipv6-argo/</guid>
-      <description>#占坑（因为Argo Tunnel坏了</description>
+      <description>186指导 如何安装Argo Tunnel可以参考 这里。
+上面的教程已经教你如何使用Cloudflared了，下面直入正题，安装Gonelist
+第一步 在 GitHub Release 下载相应构架的压缩包
+第二步 下载完成后解压出来后文件夹名就是gonelist_系统_构架
+第三步 比如我下载的是linux_amd64，下面就要输入cd gonelist_linux_arm64然后再输入./gonelist_linux_amd64Gonelist就会运行在8000端口
+第四步 可以使用nohup来守护进程，想结束进程可以使用ps -ef | grep go来查找进程号
+进阶玩法 使用systemd守护进程  下载这个脚本
+运行他 bash install-release.sh -l gonelist_系统_构架.tar.gz
+这样就能用systemd守护进程辣
+ systemctl start gonelist
+systemctl stop gonelist
+systemctl status gonelist
+ ps.使用脚本安装后配置文件在/etc/gonelist/
+   配置config.json  申请client_id和client_secret的教程一抓一大把就不说了。
+主要修改的就是redirect_url和site_url
+ redirect_url修改为http://yourdomain:8000/auth
+site_url修改为http://yourdomain:8000/
+  世纪互联  我没有世纪互联账号，所以我不确定能不能用。
+在config.json中有一段china_cloud
+将enable的值改为true
+client_id和client_secret我也不说了
+ Argo Tunnel启动！ cloudflared tunnel --hostname yourdomain.com --url localhost:8000 --name 自己写个名 可以用screen防止关闭ssh就白给的情况 </description>
     </item>
     
     <item>

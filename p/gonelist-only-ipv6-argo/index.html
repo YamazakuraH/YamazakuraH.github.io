@@ -224,7 +224,55 @@
 </header>
 
     <section class="article-content">
-    <p>#占坑（因为Argo Tunnel坏了</p>
+    <h6 id="186指导">186指导</h6>
+<p>如何安装Argo Tunnel可以参考 <strong><a class="link" href="https://blog.186526.xyz/post/argo-tunnel-for-free/"  target="_blank" rel="noopener"
+    >这里</a></strong>。</p>
+<p><strong>上面的教程已经教你如何使用Cloudflared了，下面直入正题，安装<a class="link" href="https://github.com/gonelist/gonelist/"  target="_blank" rel="noopener"
+    >Gonelist</a></strong></p>
+<h4 id="第一步">第一步</h4>
+<p><strong>在 <a class="link" href="https://github.com/cugxuan/gonelist/releases"  target="_blank" rel="noopener"
+    >GitHub Release</a> 下载相应构架的压缩包</strong></p>
+<h4 id="第二步">第二步</h4>
+<p><strong>下载完成后解压出来后文件夹名就是gonelist_系统_构架</strong></p>
+<h4 id="第三步">第三步</h4>
+<p><strong>比如我下载的是linux_amd64，下面就要输入<code>cd gonelist_linux_arm64</code>然后再输入<code>./gonelist_linux_amd64</code>Gonelist就会运行在8000端口</strong></p>
+<h4 id="第四步">第四步</h4>
+<p><strong>可以使用nohup来守护进程，想结束进程可以使用<code>ps -ef | grep go</code>来查找进程号</strong></p>
+<h4 id="进阶玩法">进阶玩法</h4>
+<h5 id="使用systemd守护进程"><strong>使用systemd守护进程</strong></h5>
+<blockquote>
+<p>下载这个<a class="link" href="https://raw.githubusercontent.com/gonelist/gonelist/master/scripts/install-release.sh"  target="_blank" rel="noopener"
+    >脚本</a><br>
+运行他 <code>bash install-release.sh -l gonelist_系统_构架.tar.gz</code><br>
+这样就能用systemd守护进程辣</p>
+<blockquote>
+<p>systemctl start gonelist<br>
+systemctl stop gonelist<br>
+systemctl status gonelist</p>
+<blockquote>
+<p>ps.使用脚本安装后配置文件在<code>/etc/gonelist/</code></p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h5 id="配置configjson"><strong>配置config.json</strong></h5>
+<blockquote>
+<p>申请<code>client_id</code>和<code>client_secret</code>的教程一抓一大把就不说了。<br>
+主要修改的就是<code>redirect_url</code>和<code>site_url</code></p>
+<blockquote>
+<p><code>redirect_url</code>修改为<code>http://yourdomain:8000/auth</code><br>
+<code>site_url</code>修改为<code>http://yourdomain:8000/</code></p>
+</blockquote>
+</blockquote>
+<h5 id="世纪互联"><strong>世纪互联</strong></h5>
+<blockquote>
+<p>我没有世纪互联账号，所以我不确定能不能用。<br>
+在<code>config.json</code>中有一段<code>china_cloud</code><br>
+将<code>enable</code>的值改为<code>true</code><br>
+<code>client_id</code>和<code>client_secret</code>我也不说了</p>
+</blockquote>
+<h3 id="argo-tunnel启动">Argo Tunnel启动！</h3>
+<pre><code class="language-console" data-lang="console">cloudflared tunnel --hostname yourdomain.com --url localhost:8000 --name 自己写个名
+</code></pre><h1 id="可以用screen防止关闭ssh就白给的情况"><strong>可以用screen防止关闭ssh就白给的情况</strong></h1>
 
 </section>
 

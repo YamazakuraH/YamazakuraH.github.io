@@ -12,7 +12,55 @@
         <pubDate>Mon, 22 Feb 2021 14:14:41 +0900</pubDate>
         
         <guid>https://blog.169163.xyz/p/gonelist-only-ipv6-argo/</guid>
-        <description>&lt;img src="https://blog.169163.xyz/p/gonelist-only-ipv6-argo/cover.jpg" alt="Featured image of post 在Euserv上部署GoneList并使用Argo tunnel" /&gt;&lt;p&gt;#占坑（因为Argo Tunnel坏了&lt;/p&gt;
+        <description>&lt;img src="https://blog.169163.xyz/p/gonelist-only-ipv6-argo/cover.jpg" alt="Featured image of post 在Euserv上部署GoneList并使用Argo tunnel" /&gt;&lt;h6 id=&#34;186指导&#34;&gt;186指导&lt;/h6&gt;
+&lt;p&gt;如何安装Argo Tunnel可以参考 &lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;https://blog.186526.xyz/post/argo-tunnel-for-free/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;这里&lt;/a&gt;&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;上面的教程已经教你如何使用Cloudflared了，下面直入正题，安装&lt;a class=&#34;link&#34; href=&#34;https://github.com/gonelist/gonelist/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Gonelist&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id=&#34;第一步&#34;&gt;第一步&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;在 &lt;a class=&#34;link&#34; href=&#34;https://github.com/cugxuan/gonelist/releases&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GitHub Release&lt;/a&gt; 下载相应构架的压缩包&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id=&#34;第二步&#34;&gt;第二步&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;下载完成后解压出来后文件夹名就是gonelist_系统_构架&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id=&#34;第三步&#34;&gt;第三步&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;比如我下载的是linux_amd64，下面就要输入&lt;code&gt;cd gonelist_linux_arm64&lt;/code&gt;然后再输入&lt;code&gt;./gonelist_linux_amd64&lt;/code&gt;Gonelist就会运行在8000端口&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id=&#34;第四步&#34;&gt;第四步&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;可以使用nohup来守护进程，想结束进程可以使用&lt;code&gt;ps -ef | grep go&lt;/code&gt;来查找进程号&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id=&#34;进阶玩法&#34;&gt;进阶玩法&lt;/h4&gt;
+&lt;h5 id=&#34;使用systemd守护进程&#34;&gt;&lt;strong&gt;使用systemd守护进程&lt;/strong&gt;&lt;/h5&gt;
+&lt;blockquote&gt;
+&lt;p&gt;下载这个&lt;a class=&#34;link&#34; href=&#34;https://raw.githubusercontent.com/gonelist/gonelist/master/scripts/install-release.sh&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;脚本&lt;/a&gt;&lt;br&gt;
+运行他 &lt;code&gt;bash install-release.sh -l gonelist_系统_构架.tar.gz&lt;/code&gt;&lt;br&gt;
+这样就能用systemd守护进程辣&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;systemctl start gonelist&lt;br&gt;
+systemctl stop gonelist&lt;br&gt;
+systemctl status gonelist&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ps.使用脚本安装后配置文件在&lt;code&gt;/etc/gonelist/&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+&lt;h5 id=&#34;配置configjson&#34;&gt;&lt;strong&gt;配置config.json&lt;/strong&gt;&lt;/h5&gt;
+&lt;blockquote&gt;
+&lt;p&gt;申请&lt;code&gt;client_id&lt;/code&gt;和&lt;code&gt;client_secret&lt;/code&gt;的教程一抓一大把就不说了。&lt;br&gt;
+主要修改的就是&lt;code&gt;redirect_url&lt;/code&gt;和&lt;code&gt;site_url&lt;/code&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;redirect_url&lt;/code&gt;修改为&lt;code&gt;http://yourdomain:8000/auth&lt;/code&gt;&lt;br&gt;
+&lt;code&gt;site_url&lt;/code&gt;修改为&lt;code&gt;http://yourdomain:8000/&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+&lt;h5 id=&#34;世纪互联&#34;&gt;&lt;strong&gt;世纪互联&lt;/strong&gt;&lt;/h5&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我没有世纪互联账号，所以我不确定能不能用。&lt;br&gt;
+在&lt;code&gt;config.json&lt;/code&gt;中有一段&lt;code&gt;china_cloud&lt;/code&gt;&lt;br&gt;
+将&lt;code&gt;enable&lt;/code&gt;的值改为&lt;code&gt;true&lt;/code&gt;&lt;br&gt;
+&lt;code&gt;client_id&lt;/code&gt;和&lt;code&gt;client_secret&lt;/code&gt;我也不说了&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;argo-tunnel启动&#34;&gt;Argo Tunnel启动！&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-console&#34; data-lang=&#34;console&#34;&gt;cloudflared tunnel --hostname yourdomain.com --url localhost:8000 --name 自己写个名
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;可以用screen防止关闭ssh就白给的情况&#34;&gt;&lt;strong&gt;可以用screen防止关闭ssh就白给的情况&lt;/strong&gt;&lt;/h1&gt;
 </description>
         </item>
         <item>
