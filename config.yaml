@@ -28,7 +28,7 @@ params:
 
     footer:
         since: 2020
-        customText: <a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral"><img src="https://cdn.jsdelivr.net/gh/YamazakuraH/YamazakuraH.github.io/CDN/upyun.png" width="40" target="_blank" rel="noopener">本站由又拍云提供cdn</a>
+        customText: <a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral"><img src="https://cdn.jsdelivr.net/gh/YamazakuraH/YamazakuraH.github.io/CDN/upyun.png" width="40" target="_blank" rel="noopener">本站由又拍云提供CDN加速</a>
 
     dateFormat:
         published: Jan 02, 2006
