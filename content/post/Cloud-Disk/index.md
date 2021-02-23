@@ -50,7 +50,23 @@ cd /www/ && tar xvf master.tar.gz && rm -rf master.tar.gz && chmod -R 777 oneman
 ```
 将 /usr/local/openresty/nginx/conf/nginx.conf 中的server段注释掉  
 gzip on; 取消注释  
-在 gzip on; 下面添加`include /etc/nginx/conf.d/*.conf;`
+在 gzip on; 下面添加include /etc/nginx/conf.d/*.conf;  
 在 /etc/nginx/conf.d/ 下创建网站conf  
 如果出现502错误尝试在 /usr/local/openresty/nginx/conf/nginx.conf 中修改 user （方法不止一种，这只是最简单的一个。）
+```
+**Nginx配置参考**
+```
+server {
+        listen 80;
+        server_name yourdomain.com; #这里改成你自己的域名
+        index index.php;
+        root /www/onemanager-php/; #根据实际情况填写
+        rewrite ^/(?!.well-known)(.*)$ /index.php?/$1 last;
+        location ~ \.php$ {
+            fastcgi_pass   unix:/run/php/php7.3-fpm.sock; #根据你的版本
+            fastcgi_index  index.php;
+            fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+            include        fastcgi_params;
+        }
+}
 ```
