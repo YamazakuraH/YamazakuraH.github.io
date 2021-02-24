@@ -61,6 +61,8 @@ systemctl status gonelist&lt;/p&gt;
 &lt;h3 id=&#34;argo-tunnel启动&#34;&gt;Argo Tunnel启动！&lt;/h3&gt;
 &lt;pre&gt;&lt;code class=&#34;language-console&#34; data-lang=&#34;console&#34;&gt;cloudflared tunnel --hostname yourdomain.com --url localhost:8000 --name 自己写个名
 &lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;可以用screen防止关闭ssh就白给的情况&#34;&gt;&lt;strong&gt;可以用screen防止关闭ssh就白给的情况&lt;/strong&gt;&lt;/h1&gt;
+&lt;h1 id=&#34;示例站点httpscloud169163xyz&#34;&gt;&lt;a class=&#34;link&#34; href=&#34;https://cloud.169163.xyz&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;示例站点&lt;/a&gt;&lt;/h1&gt;
 </description>
         </item>
         <item>
@@ -106,7 +108,9 @@ gzip on; 取消注释
             include        fastcgi_params;
         }
 }
-&lt;/code&gt;&lt;/pre&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;示例站点httpspan169163xyz&#34;&gt;&lt;a class=&#34;link&#34; href=&#34;https://pan.169163.xyz/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;示例站点&lt;/a&gt;&lt;/h1&gt;
+</description>
         </item>
         <item>
         <title>没有色图的世界</title>

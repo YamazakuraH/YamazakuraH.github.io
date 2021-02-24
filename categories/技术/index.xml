@@ -34,7 +34,7 @@ site_url修改为http://yourdomain:8000/
 在config.json中有一段china_cloud
 将enable的值改为true
 client_id和client_secret我也不说了
- Argo Tunnel启动！ cloudflared tunnel --hostname yourdomain.com --url localhost:8000 --name 自己写个名 可以用screen防止关闭ssh就白给的情况 </description>
+ Argo Tunnel启动！ cloudflared tunnel --hostname yourdomain.com --url localhost:8000 --name 自己写个名 可以用screen防止关闭ssh就白给的情况 示例站点 </description>
     </item>
     
     <item>
