@@ -50,3 +50,5 @@ categories: 技术
 cloudflared tunnel --hostname yourdomain.com --url localhost:8000 --name 自己写个名
 ```
 # **可以用screen防止关闭ssh就白给的情况**
+
+# [示例站点](https://cloud.169163.xyz)
